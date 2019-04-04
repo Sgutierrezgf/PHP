@@ -1,8 +1,8 @@
 <?php
 
-require 'app/Models/Job.php';
-require 'app/Models/Project.php';
-require_once 'app/Models/Printable.php';
+require_once 'vendor/autoload.php';
+
+use app\Models\{Jobs, Project, Printable};
 
 $job1 = new Job('PHP developer', 'Course PHP developer');
 
