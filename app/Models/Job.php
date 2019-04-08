@@ -1,6 +1,10 @@
 <?php
-require_once 'BaseElements.php';
 
-class Job extends BaseElements implements Printable {
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Job extends Model {
+    protected $table = 'jobs';
 
 }

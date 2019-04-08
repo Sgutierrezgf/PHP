@@ -1,6 +1,28 @@
 <?php 
 
-include('jobs.php');
+require_once 'vendor/autoload.php';
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Models\Job;
+
+$capsule = new Capsule;
+
+$capsule->addConnection([
+    'driver' => 'mysql',
+    'host' => 'localhost',
+    'database' => 'cursophp',
+    'username' => 'root',
+    'pasword' => '',
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix' => '',
+]);
+
+$capsule->setAsGlobal();
+
+$capsule->bootEloquent();
+
+require_once('jobs.php');
 
 $name = 'Sebastian Gutierrez';
 

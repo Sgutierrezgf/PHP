@@ -1,34 +1,24 @@
 <?php
 
-require_once 'vendor/autoload.php';
 
-use app\Models\{Jobs, Project, Printable};
 
-$job1 = new Job('PHP developer', 'Course PHP developer');
+use App\Models\{Job, Project};
 
-$job2 = new Job('Frontend developer', 'Course web developer with HTML, CSS');
-
-$job3 = new Job('JS developer', 'Course Javascript developer');
+$jobs = Job::all();
 
 $Project1 = new Project('Project 1', 'Description 1');
-
-$jobs = [
-    $job1,
-    $job2,
-    $job3
-];
 
 $Projects = [
     $Project1
 ];
 
-function printElement(Printable $jobs){
-    if($jobs->visible === false){
-      return;
-    }
+function printElement($jobs){
+    // if($jobs->visible === false){
+    //   return;
+    // }
     echo '<li class="work-position">';
-    echo '<h5>'.$jobs->getTitle().'</h5>';
-    echo '<p>'.$jobs->getDescription().'</p>';
+    echo '<h5>'.$jobs->title.'</h5>';
+    echo '<p>'.$jobs->description.'</p>';
     echo '<strong>Achievements:</strong>';
     echo '<ul>';
     echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';

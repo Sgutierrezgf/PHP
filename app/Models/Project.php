@@ -1,6 +1,6 @@
 <?php
 
-require_once 'BaseElements.php';
+namespace App\Models;
 
 class Project extends BaseElements{
 
